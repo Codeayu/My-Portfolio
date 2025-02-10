@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Chainani | Portfolio</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Ayush Chainani's portfolio - Passionate Developer & Data Enthusiast">
+    <meta name="keywords" content="web development, data science, machine learning, portfolio">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ayushchainani.me">
+    <meta property="og:title" content="Ayush Chainani | Portfolio">
+    <meta property="og:description" content="Passionate Developer & Data Enthusiast Crafting Intelligent Solutions">
+    <meta property="og:image" content="https://www.ayushchainani.me/og-image.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.ayushchainani.me">
+    <meta property="twitter:title" content="Ayush Chainani | Portfolio">
+    <meta property="twitter:description" content="Passionate Developer & Data Enthusiast Crafting Intelligent Solutions">
+    <meta property="twitter:image" content="https://www.ayushchainani.me/og-image.jpg">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS Library for animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Swiper for carousels -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Chart.js for skills chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Typed.js for typing effect -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+        
+        <!-- GSAP for animations -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-color': '#000000',
+                        'second-bg-color': '#070707',
+                        'text-color': '#ffffff',
+                        'main-color': '#0062ff',
+                    },
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background-image: url('https://source.unsplash.com/random/1600x900');
+            background-size: cover;
+            background-position: center;
+            animation: bgAnimation 10s infinite alternate;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: center; }
+            100% { background-position: bottom; }
+        }
+
+        .mobile-menu {
+            max-height: 0;
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+        }
+
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 98, 255, 0.2);
+        }
+
+        /* Dark mode styles */
+        .dark {
+            --bg-color: #ffffff;
+            --second-bg-color: #f0f0f0;
+            --text-color: #000000;
+        }
+
+        /* Improved button styles with hover effects */
+        .custom-button {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .custom-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .custom-button:hover:before {
+            left: 100%;
+        }
+
+        /* Animated skill bars */
+        .skill-bar {
+            width: 0;
+            transition: width 1s ease-out;
+        }
+
+        /* Improved responsiveness */
+        @media (max-width: 1024px) {
+            .hero-content {
+                padding: 2rem;
+            }
+            .custom-button {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            .skill-filter {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            .skill-item {
+                width: 100%;
+            }
+            .project-card, .blog-post, .testimonial {
+                width: 100%;
+            }
+            .swiper-container {
+                width: 100%;
+            }
+            .swiper-slide {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content {
+                padding: 1rem;
+            }
+            .custom-button {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            .skill-filter {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            .skill-item {
+                width: 100%;
+            }
+            .project-card, .blog-post, .testimonial {
+                width: 100%;
+            }
+            .swiper-container {
+                width: 100%;
+            }
+            .swiper-slide {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-bg-color text-text-color transition-colors duration-300">
+    <!-- Sticky Navigation -->
+    <nav class="bg-second-bg-color sticky top-0 z-50 transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold">AC Portfolio</a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-main-color transition-colors">About</a>
+                    <a href="#skills" class="hover:text-main-color transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-main-color transition-colors">Projects</a>
+                    <a href="#certifications" class="hover:text-main-color transition-colors">Certifications</a>
+                    <a href="#awards" class="hover:text-main-color transition-colors">Awards</a>
+                    <a href="#contact" class="hover:text-main-color transition-colors">Contact</a>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="dark-mode-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300">
+                    <i class="fas fa-moon"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-text-color">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Items -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-700">About</a>
+                    <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-gray-700">Skills</a>
+                    <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-gray-700">Projects</a>
+                    <a href="#blog" class="block px-3 py-2 rounded-md hover:bg-gray-700">Blog</a>
+                    <a href="#testimonials" class="block px-3 py-2 rounded-md hover:bg-gray-700">Testimonials</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-gray-700">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex items-center justify-center text-white relative" data-aos="fade-up">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="text-center px-4 relative z-10 hero-content">
+            <h1 class="text-4xl sm:text-6xl font-bold mb-4 animate-pulse drop-shadow-lg">Hi, I'm Ayush Chainani</h1>
+            <p class="text-xl sm:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-lg">
+                <span id="typed-text"></span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-4 space-y-4 sm:space-y-0">
+                <a href="#about" class="custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+                    Explore My Journey
+                </a>
+                <a href="media/Ayush_Resume.pdf" id="download-cv" download class="custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 shadow-lg transform hover:scale-105">
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-second-bg-color transition-colors duration-300" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="media/me.jpg" alt="Ayush Chainani" class="rounded-full mx-auto" width="300" height="300">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-4">
+                        I'm a passionate developer with a keen interest in data science and machine learning. 
+                        With a strong foundation in computer science and a drive for continuous learning, 
+                        I strive to create innovative solutions that make a difference.
+                    </p>
+                    <p class="text-lg mb-4">
+                        My expertise spans across various programming languages and technologies, 
+                        allowing me to tackle diverse projects and challenges.
+                        I am an aspiring Data Scientist and Developer with experience in building intelligent systems using AI and ML. I have worked with technologies like Django, Streamlit, Java, and cloud platforms like Clever Cloud. I am passionate about problem-solving and innovation.
+                    </p>
+                    <a href="#contact" class=".custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded transition duration-300">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="py-20 bg-second-bg-color transition-colors duration-300" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                
+                <!-- Project Card 1 -->
+                <div class="swiper-slide">
+                    <div class="project-card bg-bg-color rounded-lg overflow-hidden shadow-lg">
+                        <img src="media/Medical.png" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Online Medical Store Billing System</h3>
+                            <p class="text-gray-300 text-base mb-4">
+                                Developed using Java, SQL, and JavaScript, providing admin and staff roles for seamless medical store management.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">Django</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-800">Python</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/your-github-repo" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
+                            <a href="https://your-project-link.com" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
+                        
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="swiper-slide">
+                    <div class="project-card bg-bg-color rounded-lg overflow-hidden shadow-lg">
+                        <img src="media/reprt.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Smart Education: Annual Report Portal</h3>
+                            <p class="text-gray-300 text-base mb-4">
+                                A Django-based platform for role-based management of reports, tasks, and faculty data.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">Django</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-800">Python</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/your-github-repo" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
+                            <a href="https://your-project-link.com" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
+                        
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="swiper-slide">
+                    <div class="project-card bg-bg-color rounded-lg overflow-hidden shadow-lg">
+                        <img src="media/Delhi.png" alt="Project 3" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">PrimaDelhiPoint</h3>
+                            <p class="text-gray-300 text-base mb-4">
+                                A Tourist Guide Platform for Delhi, India, providing information about tourist spots, hotels, and local transport.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">Django</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-800">Python</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/your-github-repo" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
+                            <a href="https://your-project-link.com" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
+                        
+                        </div>
+                    </div>
+                </div>
+                <!--Project 4-->
+                <div class="swiper-slide">
+                    <div class="project-card bg-bg-color rounded-lg overflow-hidden shadow-lg">
+                        <img src="media/recepi.png" alt="Project 4" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Recipe Management Portal</h3>
+                            <p class="text-gray-300 text-base mb-4">
+                                Developed using Django, Html, CSS, JavaScript and Python, providing a platform for users to manage and share recipes.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">Django</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-800">Python</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800">JavaScript</span>
+                                <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-800">HTML</span>
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-800">CSS</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-800">SQL</span>
+                            </div>
+                            <a href="https://github.com/your-github-repo" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
+                            <a href="https://your-project-link.com" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+   <!-- Skills Section -->
+   <section id="skills" class="py-20 transition-colors duration-300" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
+        <div class="flex flex-wrap justify-center space-x-0 sm:space-x-4 mb-8">
+            <button class="skill-filter .custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded transition duration-300" data-filter="all">All</button>
+            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="programming">Programming</button>
+            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="tools">Tools</button>
+            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="databases">Databases</button>
+            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="libraries">Libraries</button>
+            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="soft">Soft Skills</button>
+            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="cloud">Cloud Platforms</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 skill-items-container">
+            <div class="skill-item" data-category="programming">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-python mr-2 text-white hover:text-main-color"></i>Python</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="85%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-category="programming">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-java mr-2 text-white hover:text-main-color"></i>Java</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="80%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-category="databases">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>SQL</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="databases">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>MySQL</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="databases">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>SQLite</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="65%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="soft">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-user-tie mr-2 text-white hover:text-main-color"></i>Leadership</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="85%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="programming">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-html5 mr-2 text-white hover:text-main-color"></i>HTML</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="90%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="programming">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-css3-alt mr-2 text-white hover:text-main-color"></i>CSS</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="85%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="libraries">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-code mr-2 text-white hover:text-main-color"></i>Django</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="80%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="libraries">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-chart-line mr-2 text-white hover:text-main-color"></i>Pandas</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="libraries">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-chart-bar mr-2 text-white hover:text-main-color"></i>Matplotlib</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="libraries">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-brain mr-2 text-white hover:text-main-color"></i>Scikit-learn</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="databases">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>PostgreSQL</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
+            </div>
+            </div>
+            <div class="skill-item" data-category="cloud">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-cloud mr-2 text-white hover:text-main-color"></i>Netlify</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-category="cloud">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-cloud mr-2 text-white hover:text-main-color"></i>Heroku</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-category="cloud">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-cloud mr-2 text-white hover:text-main-color"></i>Render</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="65%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-category="tools">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-chart-bar mr-2 text-white hover:text-main-color"></i>Power BI</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="80%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-category="cloud">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-cloud mr-2 text-white hover:text-main-color"></i>Clever Cloud</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-category="programming">
+            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-js-square mr-2 text-white hover:text-main-color"></i>JavaScript</h3>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="80%"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <!-- Certifications and Licenses Section -->
+  <section id="certifications" class="py-20 bg-second-bg-color transition-colors duration-300" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Certifications and Licenses</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Certification 1 -->
+            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Core Java</h3>
+                    <p class="text-gray-300 text-base mb-4">
+                        SohamGlobal • 27th August 2022
+                    </p>
+                    <a href="https://drive.google.com/file/d/1AL2DAhuP1ioyS3PjQFYU_nJ9V47DN-wC/view?usp=drive_link" target="_blank" class="text-main-color hover:text-text-color transition duration-300">View Certificate</a>
+                </div>
+            </div>
+            <!-- Certification 2 -->
+            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Enterprise Java</h3>
+                    <p class="text-gray-300 text-base mb-4">
+                        SohamGlobal • 8th July 2023
+                    </p>
+                    <a href="https://drive.google.com/file/d/1ctsUXtBJB_s8U_sMwivmf07cNCw4mYsh/view?usp=drive_link" target="_blank" class="text-main-color hover:text-text-color transition duration-300">View Certificate</a>
+                </div>
+            </div>
+            <!-- Certification 2 -->
+            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Enterprise Java</h3>
+                    <p class="text-gray-300 text-base mb-4">
+                        NPTEL • April 2024
+                    </p>
+                    <a href="https://drive.google.com/file/d/14MfOp_YI-CWXzJSOPBwwyNgmE0HagOpn/view?usp=drive_link" target="_blank" class="text-main-color hover:text-text-color transition duration-300">View Certificate</a>
+                </div>
+            </div>
+            <!-- Add more certifications as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Awards and Honors Section -->
+<section id="awards" class="py-20 transition-colors duration-300" data-aos="fade-up">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold mb-8 text-center">Awards and Honors</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Award 1 -->
+            <div class="bg-second-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Secured 1st Place in Codethon</h3>
+                    <p class="text-gray-300 text-base mb-4">
+                        I emerged as the <b>𝟏𝐬𝐭 𝐏𝐥𝐚𝐜𝐞 𝐖𝐢𝐧𝐧𝐞𝐫</b> of Codethon-24 at P. R. Pote Patil College of Engineering and Management, Amravati! 🎉
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        It was an amazing opportunity to showcase my DSA skills and approach complex problems strategically and tenaciously. Huge thanks to the Coding Club PRPCEM for hosting such a remarkable event!
+                    </p>
+                </div>
+            </div>
+            <!-- Award 2 -->
+            <div class="bg-second-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">clinched the 3rd spot at Hackathon 25
+                    </h3>
+                    <p class="text-gray-300 text-base mb-4">
+                        clinched the 3rd spot at Hackathon 25, earning a cash prize of ₹11,000! 🏆💰</p>
+                    <p class="text-gray-400 text-sm">
+                        Competing against over 200 exceptional teams from the region, our project, "Smart Education: Annual Report Portal for Institutes," truly stood out, aiming to revolutionize how educational institutions handle reports and tasks.
+                    </p>
+                </div>
+            </div>
+            <!-- Add more awards as needed -->
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+<section id="contact" class="py-20 transition-colors duration-300" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
+            <form id="contact-form" class="max-w-lg mx-auto">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-bold mb-2">Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-main-color" placeholder="Your Name">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-bold mb-2">Email</label>
+                    <input type="email" id="email" name="email" required class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-main-color" placeholder="Your Email">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-bold mb-2">Message</label>
+                    <textarea id="message" name="message" required class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-main-color" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="custom-button w-full bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded transition duration-300">
+                    Send Message
+                </button>
+            </form>
+            <div class="mt-8 text-center">
+                <h3 class="text-xl font-bold mb-4">Connect with me</h3>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-main-color transition duration-300">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-main-color transition duration-300">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-main-color transition duration-300">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-second-bg-color py-8 transition-colors duration-300">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Ayush Chainani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            once: true,
+            disable: 'mobile'
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isOpen = mobileMenu.style.maxHeight;
+            mobileMenu.style.maxHeight = isOpen ? '0' : `${mobileMenu.scrollHeight}px`;
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Form Submission Handling
+        const contactForm = document.querySelector('#contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Add form validation here
+            if (validateForm()) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent!',
+                    text: 'Thank you for reaching out. I will respond shortly!',
+                    confirmButtonColor: '#0062ff'
+                });
+                contactForm.reset();
+            }
+        });
+
+        function validateForm() {
+            // Add your form validation logic here
+            return true; // Return true if validation passes, false otherwise
+        }
+
+        // Initialize Swiper for Projects
+        new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Initialize Swiper for Testimonials
+        new Swiper('.testimonials-slider', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Skills Filter
+
+    // Skills Filter
+    const skillFilters = document.querySelectorAll('.skill-filter');
+    const skillItems = document.querySelectorAll('.skill-item');
+
+    skillFilters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            const category = filter.getAttribute('data-filter');
+            skillItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    gsap.to(item, { opacity: 1, scale: 1, duration: 0.3 });
+                } else {
+                    gsap.to(item, { opacity: 0, scale: 0.8, duration: 0.3 });
+                }
+            });
+            skillFilters.forEach(f => f.classList.remove('bg-main-color', 'text-text-color'));
+            filter.classList.add('bg-main-color', 'text-text-color');
+        });
+    });
+
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const isDarkMode = body.classList.contains('dark');
+            localStorage.setItem('darkMode', isDarkMode);
+            updateDarkModeIcon(isDarkMode);
+        });
+
+        // Check for saved dark mode preference
+        const savedDarkMode = localStorage.getItem('darkMode');
+        if (savedDarkMode === 'true') {
+            body.classList.add('dark');
+            updateDarkModeIcon(true);
+        }
+
+        function updateDarkModeIcon(isDarkMode) {
+            const icon = darkModeToggle.querySelector('i');
+            icon.className = isDarkMode ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        // Remove Dark Mode Toggle
+        darkModeToggle.remove();
+        // CV Download
+        document.getElementById('download-cv').addEventListener('click', (e) => {
+            e.preventDefault();
+            // Replace 'path/to/your-cv.pdf' with the actual path to your CV file
+            const cvUrl = 'media/Ayush_Resume.pdf';
+            const link = document.createElement('a');
+            link.href = cvUrl;
+            link.download = 'Ayush_Chainani_CV.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+
+        // Typing effect for hero section
+        new Typed('#typed-text', {
+            strings: [
+                'AI & Data Science Enthusiast',
+                'Web Developer',
+                'Problem Solver',
+                '3rd Year BE Student'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1000,
+            loop: true
+        });
+
+        // Animate skill bars when scrolled into view
+        const skillBars = document.querySelectorAll('.skill-bar');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.dataset.width;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => {
+            observer.observe(bar);
+        });
+
+        // Improved responsiveness
+        function handleResize() {
+            const heroContent = document.querySelector('.hero-content');
+            if (window.innerWidth <= 640) {
+                heroContent.classList.add('p-4');
+            } else {
+                heroContent.classList.remove('p-4');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Call once on load
+    </script>
+</body>
+</html>
