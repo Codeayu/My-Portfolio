@@ -104,14 +104,14 @@
             overflow: hidden;
         }
 
-        .custom-button:before {
+        .custom-button::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(25, 0, 250, 0.2);
             transition: all 0.3s ease;
         }
 
@@ -124,6 +124,13 @@
             width: 0;
             transition: width 1s ease-out;
         }
+        #projects {
+    position: relative;
+    overflow: hidden;
+}
+.swiper-container {
+    width: 100%;
+}
 
         /* Improved responsiveness */
         @media (max-width: 1024px) {
@@ -191,8 +198,9 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8">
                     <a href="#about" class="hover:text-main-color transition-colors">About</a>
-                    <a href="#skills" class="hover:text-main-color transition-colors">Skills</a>
+                    <a href="#experience-qualifications" class="hover:text-main-color transition-colors">Experience & Qualifications</a>
                     <a href="#projects" class="hover:text-main-color transition-colors">Projects</a>
+                    <a href="#skills" class="hover:text-main-color transition-colors">Skills</a>
                     <a href="#certifications" class="hover:text-main-color transition-colors">Certifications</a>
                     <a href="#awards" class="hover:text-main-color transition-colors">Awards</a>
                     <a href="#contact" class="hover:text-main-color transition-colors">Contact</a>
@@ -213,8 +221,9 @@
             <div id="mobile-menu" class="mobile-menu md:hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <a href="#about" class="block px-3 py-2 rounded-md hover:bg-gray-700">About</a>
-                    <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-gray-700">Skills</a>
+                    <a href="#experience-qualifications" class="block px-3 py-2 rounded-md hover:bg-gray-700">Experience & Qualifications</a>
                     <a href="#projects" class="block px-3 py-2 rounded-md hover:bg-gray-700">Projects</a>
+                    <a href="#skills" class="block px-3 py-2 rounded-md hover:bg-gray-700">Skills</a>
                     <a href="#blog" class="block px-3 py-2 rounded-md hover:bg-gray-700">Blog</a>
                     <a href="#testimonials" class="block px-3 py-2 rounded-md hover:bg-gray-700">Testimonials</a>
                     <a href="#contact" class="block px-3 py-2 rounded-md hover:bg-gray-700">Contact</a>
@@ -269,6 +278,92 @@
         </div>
     </section>
 
+    <!-- Experience and Qualifications Section -->
+    <section id="experience-qualifications" class="py-20 bg-second-bg-color transition-colors duration-300" data-aos="fade-up">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 text-center">Experience & Qualifications</h2>
+            <div class="tabs">
+                <div class="tab-buttons flex justify-center space-x-4 mb-8">
+                    <button class="tab-button .custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded transition duration-300" data-tab="experience">Experience</button>
+                    <button class="tab-button .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-tab="qualifications">Qualifications</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane" id="experience">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Experience 1 -->
+                            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg p-6">
+                                <h3 class="font-bold text-xl mb-2">Software Developer Intern</h3>
+                                <p class="text-gray-300 text-base mb-4">XYZ Company • June 2023 - August 2023</p>
+                                <ul class="list-disc list-inside text-gray-400">
+                                    <li>Developed and maintained web applications using Django and React.</li>
+                                    <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
+                                    <li>Implemented RESTful APIs and integrated third-party services.</li>
+                                </ul>
+                            </div>
+                            <!-- Experience 2 -->
+                            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg p-6">
+                                <h3 class="font-bold text-xl mb-2">Data Science Intern</h3>
+                                <p class="text-gray-300 text-base mb-4">ABC Corp • January 2023 - May 2023</p>
+                                <ul class="list-disc list-inside text-gray-400">
+                                    <li>Analyzed large datasets to extract actionable insights.</li>
+                                    <li>Developed machine learning models to predict customer behavior.</li>
+                                    <li>Presented findings to stakeholders and provided data-driven recommendations.</li>
+                                </ul>
+                            </div>
+                            <!-- Add more experiences as needed -->
+                        </div>
+                    </div>
+                    <div class="tab-pane hidden" id="qualifications">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Qualification 1 -->
+                            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg p-6">
+                                <h3 class="font-bold text-xl mb-2">Bachelor of Engineering in Computer Science</h3>
+                                <p class="text-gray-300 text-base mb-4">XYZ University • 2021 - Present</p>
+                                <ul class="list-disc list-inside text-gray-400">
+                                    <li>Relevant coursework: Data Structures, Algorithms, Machine Learning, Web Development.</li>
+                                    <li>GPA: 3.8/4.0</li>
+                                </ul>
+                            </div>
+                            <!-- Qualification 2 -->
+                            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg p-6">
+                                <h3 class="font-bold text-xl mb-2">High School Diploma</h3>
+                                <p class="text-gray-300 text-base mb-4">ABC High School • 2019 - 2021</p>
+                                <ul class="list-disc list-inside text-gray-400">
+                                    <li>Graduated with honors.</li>
+                                    <li>Relevant coursework: Advanced Mathematics, Physics, Computer Science.</li>
+                                </ul>
+                            </div>
+                            <!-- Add more qualifications as needed -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+
+                tabButtons.forEach(btn => btn.classList.remove('bg-main-color', 'text-text-color'));
+                button.classList.add('bg-main-color', 'text-text-color');
+
+                tabPanes.forEach(pane => {
+                    if (pane.id === targetTab) {
+                        pane.classList.remove('hidden');
+                    } else {
+                        pane.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+
     <!-- Projects Section -->
 <section id="projects" class="py-20 bg-second-bg-color transition-colors duration-300" data-aos="fade-up">
     <div class="container mx-auto px-4">
@@ -290,8 +385,8 @@
                                 <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-800">Python</span>
                                 <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800">JavaScript</span>
                             </div>
-                            <a href="https://github.com/Codeayu/Online-Medical-Store-Billing-System" target="_blank" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
-                            <a href="#" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
+                            <a href="https://github.com/your-github-repo" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
+                            <a href="https://your-project-link.com" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
                         
                         </div>
                     </div>
@@ -310,8 +405,8 @@
                                 <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-800">Python</span>
                                 <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800">JavaScript</span>
                             </div>
-                            <a href="#" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
-                            <a href="#" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
+                            <a href="https://github.com/your-github-repo" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
+                            <a href="https://your-project-link.com" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
                         
                         </div>
                     </div>
@@ -330,8 +425,8 @@
                                 <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-800">Python</span>
                                 <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-200 dark:text-yellow-800">JavaScript</span>
                             </div>
-                            <a href="https://github.com/Codeayu/PrimaDelhiPoint"  target="_blank" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
-                            <a href="https://primadelhipoint.netlify.app/" target="_blank" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
+                            <a href="https://github.com/your-github-repo" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
+                            <a href="https://your-project-link.com" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
                         
                         </div>
                     </div>
@@ -353,8 +448,8 @@
                                 <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-indigo-200 dark:text-indigo-800">CSS</span>
                                 <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-purple-200 dark:text-purple-800">SQL</span>
                             </div>
-                            <a href="https://github.com/Codeayu/RecipeManager" target="_blank" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
-                            <a href="https://recipemanager-wqov.onrender.com/" target="_blank" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
+                            <a href="https://github.com/your-github-repo" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">GitHub</a>
+                            <a href="https://your-project-link.com" class=".custom-button bg-transparent border border-main-color hover:bg-main-color text-main-color hover:text-text-color font-bold py-2 px-4 rounded-full transition duration-300 transform hover:scale-105">Project Link</a>
                         </div>
                     </div>
                 </div>
@@ -370,17 +465,17 @@
 
     <!-- Skills Section -->
    <!-- Skills Section -->
-   <section id="skills" class="py-20 transition-colors duration-300" data-aos="fade-up">
+<section id="skills" class="py-20 transition-colors duration-300" data-aos="fade-up">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
         <div class="flex flex-wrap justify-center space-x-0 sm:space-x-4 mb-8">
-            <button class="skill-filter .custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded transition duration-300" data-filter="all">All</button>
-            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="programming">Programming</button>
-            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="tools">Tools</button>
-            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="databases">Databases</button>
-            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="libraries">Libraries</button>
-            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="soft">Soft Skills</button>
-            <button class="skill-filter .custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="cloud">Cloud Platforms</button>
+            <button class="skill-filter custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded transition duration-300" data-filter="all">All</button>
+            <button class="skill-filter custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="programming">Programming</button>
+            <button class="skill-filter custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="tools">Tools</button>
+            <button class="skill-filter custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="databases">Databases</button>
+            <button class="skill-filter custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="libraries">Libraries</button>
+            <button class="skill-filter custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="soft">Soft Skills</button>
+            <button class="skill-filter custom-button bg-transparent border border-main-color hover:bg-main-color hover:text-text-color text-main-color font-bold py-2 px-4 rounded transition duration-300" data-filter="cloud">Cloud Platforms</button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 skill-items-container">
             <div class="skill-item" data-category="programming">
@@ -396,70 +491,70 @@
                 </div>
             </div>
             <div class="skill-item" data-category="databases">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>SQL</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
-            </div>
-            </div>
-            <div class="skill-item" data-category="databases">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>MySQL</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
-            </div>
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>SQL</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
+                </div>
             </div>
             <div class="skill-item" data-category="databases">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>SQLite</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="65%"></div>
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>MySQL</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
+                </div>
             </div>
+            <div class="skill-item" data-category="databases">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>SQLite</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="65%"></div>
+                </div>
             </div>
             <div class="skill-item" data-category="soft">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-user-tie mr-2 text-white hover:text-main-color"></i>Leadership</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="85%"></div>
-            </div>
-            </div>
-            <div class="skill-item" data-category="programming">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-html5 mr-2 text-white hover:text-main-color"></i>HTML</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="90%"></div>
-            </div>
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-user-tie mr-2 text-white hover:text-main-color"></i>Leadership</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="85%"></div>
+                </div>
             </div>
             <div class="skill-item" data-category="programming">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-css3-alt mr-2 text-white hover:text-main-color"></i>CSS</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="85%"></div>
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-html5 mr-2 text-white hover:text-main-color"></i>HTML</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="90%"></div>
+                </div>
             </div>
-            </div>
-            <div class="skill-item" data-category="libraries">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-code mr-2 text-white hover:text-main-color"></i>Django</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="80%"></div>
-            </div>
-            </div>
-            <div class="skill-item" data-category="libraries">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-chart-line mr-2 text-white hover:text-main-color"></i>Pandas</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
-            </div>
+            <div class="skill-item" data-category="programming">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-css3-alt mr-2 text-white hover:text-main-color"></i>CSS</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="85%"></div>
+                </div>
             </div>
             <div class="skill-item" data-category="libraries">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-chart-bar mr-2 text-white hover:text-main-color"></i>Matplotlib</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
-            </div>
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-code mr-2 text-white hover:text-main-color"></i>Django</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="80%"></div>
+                </div>
             </div>
             <div class="skill-item" data-category="libraries">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-brain mr-2 text-white hover:text-main-color"></i>Scikit-learn</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-chart-line mr-2 text-white hover:text-main-color"></i>Pandas</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
+                </div>
             </div>
+            <div class="skill-item" data-category="libraries">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-chart-bar mr-2 text-white hover:text-main-color"></i>Matplotlib</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
+                </div>
+            </div>
+            <div class="skill-item" data-category="libraries">
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-brain mr-2 text-white hover:text-main-color"></i>Scikit-learn</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="75%"></div>
+                </div>
             </div>
             <div class="skill-item" data-category="databases">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>PostgreSQL</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
-            </div>
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-database mr-2 text-white hover:text-main-color"></i>PostgreSQL</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="70%"></div>
+                </div>
             </div>
             <div class="skill-item" data-category="cloud">
                 <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fas fa-cloud mr-2 text-white hover:text-main-color"></i>Netlify</h3>
@@ -492,48 +587,86 @@
                 </div>
             </div>
             <div class="skill-item" data-category="programming">
-            <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-js-square mr-2 text-white hover:text-main-color"></i>JavaScript</h3>
-            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="80%"></div>
-            </div>
+                <h3 class="font-bold text-xl mb-2 flex items-center"><i class="fab fa-js-square mr-2 text-white hover:text-main-color"></i>JavaScript</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <div class="skill-bar bg-main-color h-2.5 rounded-full" data-width="80%"></div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-  <!-- Certifications and Licenses Section -->
-  <section id="certifications" class="py-20 bg-second-bg-color transition-colors duration-300" data-aos="fade-up">
+<script>
+    // Skills Filter
+    const skillFilters = document.querySelectorAll('.skill-filter');
+    const skillItems = document.querySelectorAll('.skill-item');
+
+    skillFilters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            const category = filter.getAttribute('data-filter');
+            skillItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    item.classList.add('fade-in');
+                } else {
+                    item.style.display = 'none';
+                    item.classList.remove('fade-in');
+                }
+            });
+            skillFilters.forEach(f => f.classList.remove('bg-main-color', 'text-text-color'));
+            filter.classList.add('bg-main-color', 'text-text-color');
+        });
+    });
+
+   
+    // Add fade-in animation class
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    `;
+    document.head.appendChild(style);
+</script>
+
+
+<!-- Certifications and Licenses Section -->
+<section id="certifications" class="py-20 bg-second-bg-color transition-colors duration-300" data-aos="fade-up"></section>
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold mb-8 text-center">Certifications and Licenses</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Certification 1 -->
-            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="p-6">
                     <h3 class="font-bold text-xl mb-2">Core Java</h3>
                     <p class="text-gray-300 text-base mb-4">
                         SohamGlobal • 27th August 2022
                     </p>
-                    <a href="https://drive.google.com/file/d/1AL2DAhuP1ioyS3PjQFYU_nJ9V47DN-wC/view?usp=drive_link" target="_blank" class="text-main-color hover:text-text-color transition duration-300">View Certificate</a>
+                    <a href="https://drive.google.com/file/d/1AL2DAhuP1ioyS3PjQFYU_nJ9V47DN-wC/view?usp=drive_link" target="_blank" class="custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded-full transition duration-300 inline-block">View Certificate</a>
                 </div>
             </div>
             <!-- Certification 2 -->
-            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="p-6">
                     <h3 class="font-bold text-xl mb-2">Enterprise Java</h3>
                     <p class="text-gray-300 text-base mb-4">
                         SohamGlobal • 8th July 2023
                     </p>
-                    <a href="https://drive.google.com/file/d/1ctsUXtBJB_s8U_sMwivmf07cNCw4mYsh/view?usp=drive_link" target="_blank" class="text-main-color hover:text-text-color transition duration-300">View Certificate</a>
+                    <a href="https://drive.google.com/file/d/1ctsUXtBJB_s8U_sMwivmf07cNCw4mYsh/view?usp=drive_link" target="_blank" class="custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded-full transition duration-300 inline-block">View Certificate</a>
                 </div>
             </div>
-            <!-- Certification 2 -->
-            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+            <!-- Certification 3 -->
+            <div class="bg-bg-color rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">Enterprise Java</h3>
+                    <h3 class="font-bold text-xl mb-2">Python For Data Science</h3>
                     <p class="text-gray-300 text-base mb-4">
                         NPTEL • April 2024
                     </p>
-                    <a href="https://drive.google.com/file/d/14MfOp_YI-CWXzJSOPBwwyNgmE0HagOpn/view?usp=drive_link" target="_blank" class="text-main-color hover:text-text-color transition duration-300">View Certificate</a>
+                    <a href="https://drive.google.com/file/d/14MfOp_YI-CWXzJSOPBwwyNgmE0HagOpn/view?usp=drive_link" target="_blank" class="custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded-full transition duration-300 inline-block">View Certificate</a>
                 </div>
             </div>
             <!-- Add more certifications as needed -->
@@ -547,7 +680,8 @@
         <h2 class="text-3xl font-bold mb-8 text-center">Awards and Honors</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Award 1 -->
-            <div class="bg-second-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+            <div class="project-card bg-second-bg-color rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                <img src="media/WhatsApp Image 2025-02-12 at 20.18.53_d9ace9d4.jpg" alt="Codethon 1st Place" class="w-full h-48 object-cover">
                 <div class="p-6">
                     <h3 class="font-bold text-xl mb-2">Secured 1st Place in Codethon</h3>
                     <p class="text-gray-300 text-base mb-4">
@@ -556,18 +690,21 @@
                     <p class="text-gray-400 text-sm">
                         It was an amazing opportunity to showcase my DSA skills and approach complex problems strategically and tenaciously. Huge thanks to the Coding Club PRPCEM for hosting such a remarkable event!
                     </p>
+                    <a href="https://www.linkedin.com/posts/ayushchainani_winner-codethon24-dsa-activity-7254929132319358976-2oLQ?utm_source=share&utm_medium=member_desktop" target="_blank" class="custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded-full transition duration-300 mt-4 inline-block">View LinkedIn Post</a>
                 </div>
             </div>
             <!-- Award 2 -->
-            <div class="bg-second-bg-color rounded-lg overflow-hidden shadow-lg transition-colors duration-300">
+            <div class="project-card bg-second-bg-color rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                <img src="media/IMG_4113.JPG" alt="Hackathon 3rd Place" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="font-bold text-xl mb-2">clinched the 3rd spot at Hackathon 25
-                    </h3>
+                    <h3 class="font-bold text-xl mb-2">Clinched the 3rd Spot at Hackathon 25</h3>
                     <p class="text-gray-300 text-base mb-4">
-                        clinched the 3rd spot at Hackathon 25, earning a cash prize of ₹11,000! 🏆💰</p>
+                        Clinched the 3rd spot at Hackathon 25, earning a cash prize of ₹11,000! 🏆💰
+                    </p>
                     <p class="text-gray-400 text-sm">
                         Competing against over 200 exceptional teams from the region, our project, "Smart Education: Annual Report Portal for Institutes," truly stood out, aiming to revolutionize how educational institutions handle reports and tasks.
                     </p>
+                    <a href="https://www.linkedin.com/posts/ayushchainani_hackathon25-codehack-smarteducation-activity-7289637037551300609-E6UZ?utm_source=share&utm_medium=member_desktop" target="_blank" class="custom-button bg-main-color hover:bg-text-color hover:text-main-color text-text-color font-bold py-2 px-4 rounded-full transition duration-300 mt-4 inline-block">View LinkedIn Post</a>
                 </div>
             </div>
             <!-- Add more awards as needed -->
@@ -575,7 +712,7 @@
     </div>
 </section>
 
-    <!-- Contact Section -->
+<!-- Contact Section -->
 <section id="contact" class="py-20 transition-colors duration-300" data-aos="fade-up">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
@@ -675,7 +812,7 @@
         }
 
         // Initialize Swiper for Projects
-        new Swiper('.swiper-container', {
+        new Swiper('#projects .swiper-container', {
             slidesPerView: 1,
             spaceBetween: 20,
             navigation: {
@@ -696,44 +833,9 @@
             },
         });
 
-        // Initialize Swiper for Testimonials
-        new Swiper('.testimonials-slider', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
-        });
+       
 
-        // Skills Filter
-
-    // Skills Filter
-    const skillFilters = document.querySelectorAll('.skill-filter');
-    const skillItems = document.querySelectorAll('.skill-item');
-
-    skillFilters.forEach(filter => {
-        filter.addEventListener('click', () => {
-            const category = filter.getAttribute('data-filter');
-            skillItems.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-category') === category) {
-                    gsap.to(item, { opacity: 1, scale: 1, duration: 0.3 });
-                } else {
-                    gsap.to(item, { opacity: 0, scale: 0.8, duration: 0.3 });
-                }
-            });
-            skillFilters.forEach(f => f.classList.remove('bg-main-color', 'text-text-color'));
-            filter.classList.add('bg-main-color', 'text-text-color');
-        });
-    });
+   
 
 
         // Dark Mode Toggle
